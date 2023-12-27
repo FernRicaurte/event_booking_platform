@@ -33,12 +33,28 @@ Attributes:
 """
     def __str__(self):
         return self.title
-    
+
+
 class Registration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     attendee = models.ForeignKey(User, on_delete=models.CASCADE)
     registration_date = models.DateTimeField(auto_now_add=True)
     
+    """
+Represents a registration for an event in the event booking platform.
+
+Args:
+    event (Event): The event being registered for.
+    attendee (User): The user who is attending the event.
+
+Attributes:
+    event (Event): The event being registered for.
+    attendee (User): The user who is attending the event.
+    registration_date (datetime.datetime): The timestamp when the registration was created.
+
+Returns:
+    str: A string representation of the registration, showing the username of the attendee and the title of the event.
+
+""" 
     def __str__(self):
         return f"{self.attendee.username} - {self.event.title}"
-    

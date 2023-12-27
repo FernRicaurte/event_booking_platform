@@ -52,6 +52,6 @@ Attributes:
 Returns:
     str: A string representation of the registration, 
     showing the username of the attendee and the title of the event.
-""" 
-    def __str__(self):
-        return f"{self.attendee.username} - {self.event.title}"
+"""
+def __str__(self):
+    return f"{self.attendee.username} - {self.event.title}"

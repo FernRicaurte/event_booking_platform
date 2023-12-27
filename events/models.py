@@ -9,7 +9,6 @@ class Event(models.Model):
     location = models.CharField(max_length=255)
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    
     """
 Represents an event in the event booking platform.
 
@@ -29,7 +28,6 @@ Attributes:
     location (str): The location of the event.
     organizer (User): The user who organized the event.
     created_at (datetime.datetime): The timestamp when the event was created.
-
 """
     def __str__(self):
         return self.title
@@ -38,8 +36,7 @@ Attributes:
 class Registration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     attendee = models.ForeignKey(User, on_delete=models.CASCADE)
-    registration_date = models.DateTimeField(auto_now_add=True)
-    
+    registration_date = models.DateTimeField(auto_now_add=True)  
     """
 Represents a registration for an event in the event booking platform.
 
@@ -53,8 +50,8 @@ Attributes:
     registration_date (datetime.datetime): The timestamp when the registration was created.
 
 Returns:
-    str: A string representation of the registration, showing the username of the attendee and the title of the event.
-
+    str: A string representation of the registration, 
+    showing the username of the attendee and the title of the event.
 """ 
     def __str__(self):
         return f"{self.attendee.username} - {self.event.title}"

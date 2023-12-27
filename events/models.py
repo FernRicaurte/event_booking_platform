@@ -38,7 +38,7 @@ class Registration(models.Model):
     attendee = models.ForeignKey(User, on_delete=models.CASCADE)
     registration_date = models.DateTimeField(auto_now_add=True)  
     """
-Represents a registration for an event in the event booking platform.
+    Represents a registration for an event in the event booking platform.
 
 Args:
     event (Event): The event being registered for.

@@ -55,3 +55,6 @@ Returns:
 """
 def __str__(self):
     return f"{self.attendee.username} - {self.event.title}"
+
+class Meta:
+    app_label = 'events'

@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Event, Registration
+from .serializers import EventSerializer, RegistrationSerializer
 
-# Create your views here.
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = RegistrationSerializer
+    
+class RegistrationViewSet(viewsets.ModelViewSet):
+    queryset = Registration.objects.all()
+    serializer_class = RegistrationSerializer
+    
